@@ -21,11 +21,11 @@ int		main(int argc, char **argv)
 	{
 		while (i < argc)
 		{
-			std::cout << ft_lowtocap(argv[i]);
+			std::cout << ft_lowtocap(argv[i]) << std::endl;
 			i++;
 		}
 	}
 	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n" << std::endl;
 	return (0);
 }
