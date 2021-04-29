@@ -3,14 +3,18 @@
 
 # include <iostream>
 # include <string>
+# include "Zombie.hpp"
 
-class	ZombieEvent : public Zombie
+class	ZombieEvent
 {
 
-public:
-	
+	public:
+		void	setZombieType(std::string const& type);
+		Zombie*	newZombie(std::string name); //prototype doesn't need the ref &
+		Zombie*	randomChump();
 
-	void	setZombieType();
+	private:
+		std::string m_type;
 
 };
 

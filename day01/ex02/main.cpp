@@ -1,25 +1,22 @@
 #include "Zombie.hpp"
-
-Zombie	newZombie(){
-
-	Zombie	z;
-	z.setName();
-	z.setType();
-	return (z);
-}
+#include "ZombieEvent.hpp"
 
 int	main(){
 
-	std::string	ans;
-	Zombie	myZombie = newZombie();
-	while (1){
+	Zombie*		z;
+	ZombieEvent	zombie_event;
+	Zombie		z_stack("jack_stack", "not the musician");
 
-	std::cout << "You can interact with him \t(or 'e' to exit)" << std::endl;
-	std::getline(std::cin >> std::ws, ans);
-	if (ans.compare("e") == 0)
-		break;
-	else
-		myZombie.advert();
+	zombie_event.setZombieType("Priest");
+	z = zombie_event.newZombie("Patrick");
+	zombie_event.setZombieType("Fleshed_skull");
+
+	delete z;
+
+	for (int i = 0 ; i < 5 ; i++)
+	{
+		z = zombie_event.randomChump();
+		delete z;
 	}
 	return (0);
 
