@@ -9,10 +9,3 @@ void memoryLeak() {
 	delete panthere;
 
 }
-
-int main(){
-
-	memoryLeak();
-	return(0);
-
-}

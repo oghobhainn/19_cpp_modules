@@ -10,7 +10,7 @@ class	ZombieEvent
 
 	public:
 		void	setZombieType(std::string const& type);
-		Zombie*	newZombie(std::string name); //prototype doesn't need the ref &
+		Zombie*	newZombie(std::string const& name);
 		Zombie*	randomChump();
 
 	private:
