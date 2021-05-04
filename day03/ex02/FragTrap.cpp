@@ -9,9 +9,9 @@ FragTrap::FragTrap(std::string const &name) :
 	m_maxEnergyPoints(100),
 	m_level(1),
 	m_name(name),
-	m_meleeAttackDamage(30),
-	m_rangedAttackDamage(20),
-	m_armorDamageReduction(5)
+	m_meleeAtkDmg(30),
+	m_rangedAtkDmg(20),
+	m_armorDmgRed(5)
 {
 		std::cout << "FR4G-TP New " << name << ": here to kick some donkeys" << std::endl;
 }
@@ -33,10 +33,10 @@ FragTrap::FragTrap() {}
 
 void	FragTrap::takeDamage(unsigned int amount)
 {
-	if (m_armorDamageReduction > amount)
+	if (m_armorDmgRed > amount)
 		amount = 0;
 	else
-		amount -= m_armorDamageReduction;
+		amount -= m_armorDmgRed;
 	if (amount > m_hitPoints)
 		m_hitPoints = 0;
 	else
@@ -46,13 +46,13 @@ void	FragTrap::takeDamage(unsigned int amount)
 
 void	FragTrap::rangedAttack(std::string const &target)
 {
-	std::cout << "FR4G-TP " << m_name << " attacks " << target << " at a safe distance, dealing " << m_rangedAttackDamage << "damages !" << std::endl;
+	std::cout << "FR4G-TP " << m_name << " attacks " << target << " at a safe distance, dealing " << m_rangedAtkDmg << "damages !" << std::endl;
 	return ;
 }
 
 void	FragTrap::meleeAttack(std::string const &target)
 {
-	std::cout << "FR4G-TP " << m_name << " attacks " << target << " at close combat, dealing " << m_meleeAttackDamage << "damages !" << std::endl;
+	std::cout << "FR4G-TP " << m_name << " attacks " << target << " at close combat, dealing " << m_meleeAtkDmg << "damages !" << std::endl;
 	return ;
 }
 
@@ -99,9 +99,9 @@ FragTrap	&FragTrap::operator=(FragTrap const &other)
     m_energyPoints = other.m_energyPoints;
     m_maxEnergyPoints = other.m_maxEnergyPoints;
     m_level = other.m_level;
-    m_meleeAttackDamage = other.m_meleeAttackDamage;
-    m_rangedAttackDamage = other.m_rangedAttackDamage;
-    m_armorDamageReduction = other.m_armorDamageReduction;
+    m_meleeAtkDmg = other.m_meleeAtkDmg;
+    m_rangedAtkDmg = other.m_rangedAtkDmg;
+    m_armorDmgRed = other.m_armorDmgRed;
 
 	return *this;
 }

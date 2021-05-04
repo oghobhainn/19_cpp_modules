@@ -28,9 +28,9 @@ class FragTrap{
 		unsigned int	m_maxEnergyPoints;
 		unsigned int	m_level;
 		std::string		m_name;
-		unsigned int	m_meleeAttackDamage;
-		unsigned int	m_rangedAttackDamage;
-		unsigned int	m_armorDamageReduction;
+		unsigned int	m_meleeAtkDmg;
+		unsigned int	m_rangedAtkDmg;
+		unsigned int	m_armorDmgRed;
 
 		FragTrap();
 };
