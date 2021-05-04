@@ -17,6 +17,8 @@ class ClapTrap{
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
+		std::string	const &getName( void ) const;
+
 		ClapTrap& operator=(ClapTrap const &);
 
 	protected:

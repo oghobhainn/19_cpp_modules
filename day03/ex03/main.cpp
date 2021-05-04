@@ -1,5 +1,6 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main()
 {
@@ -45,6 +46,24 @@ int main()
 	st.challengeNewcomer();
 	st.challengeNewcomer();
 	
+	std::cout << std::endl << "======= NINJA TRAP ========" << std::endl;
+
+	NinjaTrap	nt("Otori Takeo");
+
+	nt.rangedAttack("Kim-Jong-Un");
+	nt.meleeAttack("a wild gaijin");
+	nt.takeDamage(20);
+	nt.takeDamage(20);
+	nt.takeDamage(80);
+	nt.beRepaired(60);
+	nt.beRepaired(60);
+	nt.takeDamage(40);
+	nt.takeDamage(40);
+	nt.takeDamage(40);
+	nt.ninjaShoeBox(ft);
+	nt.ninjaShoeBox(st);
+	nt.ninjaShoeBox(nt);
+
 	std::cout << std::endl << "======= DESTRUCTORS ========" << std::endl;
 	return 0;
 }

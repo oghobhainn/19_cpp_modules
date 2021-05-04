@@ -67,6 +67,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
+std::string const &ClapTrap::getName(void) const
+{
+	return (this->m_name);
+}
+
 //=========== OPERATEURS MEMBRES ==============//
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &other)

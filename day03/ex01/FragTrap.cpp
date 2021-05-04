@@ -60,7 +60,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 {
 	if (m_hitPoints + amount > m_maxHitPoints)
 	{
-		m_hitPoints = 100;
+		m_hitPoints = m_maxHitPoints;
 		std::cout << m_name << " is at maximum hp's ! " << m_hitPoints << "/" << m_maxHitPoints << std::endl;
 
 	}

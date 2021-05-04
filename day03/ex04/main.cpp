@@ -1,5 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main()
 {
@@ -45,6 +47,43 @@ int main()
 	st.challengeNewcomer();
 	st.challengeNewcomer();
 	
+	std::cout << std::endl << "======= NINJA TRAP ========" << std::endl;
+
+	NinjaTrap	nt("Otori Takeo");
+
+	nt.rangedAttack("Kim-Jong-Un");
+	nt.meleeAttack("a wild gaijin");
+	nt.takeDamage(20);
+	nt.takeDamage(20);
+	nt.takeDamage(80);
+	nt.beRepaired(60);
+	nt.beRepaired(60);
+	nt.takeDamage(40);
+	nt.takeDamage(40);
+	nt.takeDamage(40);
+	nt.ninjaShoeBox(ft);
+	nt.ninjaShoeBox(st);
+	nt.ninjaShoeBox(nt);
+
+	std::cout << std::endl << "======= SUPER TRAP ========" << std::endl;
+
+	SuperTrap	pt("InviciMan");
+	
+	pt.rangedAttack("Thanos le tanant");
+	pt.meleeAttack("God-Himself");
+	pt.takeDamage(20);
+	pt.takeDamage(20);
+	pt.takeDamage(80);
+	pt.beRepaired(60);
+	pt.beRepaired(60);
+	pt.takeDamage(40);
+	pt.takeDamage(40);
+	pt.takeDamage(40);
+	pt.ninjaShoeBox(ft);
+	pt.vaulthunter_dot_exe("The Devil's son");
+	pt.ninjaShoeBox(st);
+	pt.ninjaShoeBox(nt);
+
 	std::cout << std::endl << "======= DESTRUCTORS ========" << std::endl;
 	return 0;
 }
