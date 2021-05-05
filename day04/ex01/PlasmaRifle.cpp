@@ -2,9 +2,7 @@
 
 PlasmaRifle::PlasmaRifle () :
 	AWeapon("Plasma Rifle", 21, 5)
-{
-	std::cout << "It's a plasma rifle !" << std::endl;
-}
+{}
 
 PlasmaRifle::~PlasmaRifle() {}
 
