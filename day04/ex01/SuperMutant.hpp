@@ -10,7 +10,7 @@ class SuperMutant : public Enemy
 	public:
 		SuperMutant( void );
 		SuperMutant( SuperMutant const & );
-		~SuperMutant( void );
+		virtual ~SuperMutant( void );
 
 		SuperMutant & operator=(SuperMutant const &);
 

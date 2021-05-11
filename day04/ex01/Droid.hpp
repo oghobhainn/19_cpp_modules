@@ -10,7 +10,7 @@ class Droid : public Enemy
 	public:
 		Droid( void );
 		Droid( Droid const & );
-		~Droid( void );
+		virtual ~Droid( void );
 
 		Droid & operator=(Droid const &);
 

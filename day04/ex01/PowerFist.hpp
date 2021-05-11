@@ -10,7 +10,7 @@ class PowerFist : public AWeapon
 	public:
 		PowerFist( void );
 		PowerFist( PowerFist const & );
-		~PowerFist( void );
+		virtual ~PowerFist( void );
 
 		PowerFist & operator=(PowerFist const &);
 

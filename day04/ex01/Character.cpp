@@ -5,8 +5,8 @@
 Character::Character( std::string const &name ) :
         m_name(name),
         m_ap(40),
-		m_weapon(NULL),
-		m_maxAp(m_ap)
+		m_maxAp(m_ap),
+		m_weapon(NULL)
 {
 }
 

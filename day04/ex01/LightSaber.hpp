@@ -10,7 +10,7 @@ class LightSaber : public AWeapon
 	public:
 		LightSaber( void );
 		LightSaber( LightSaber const & );
-		~LightSaber( void );
+		virtual ~LightSaber( void );
 
 		LightSaber & operator=(LightSaber const &);
 

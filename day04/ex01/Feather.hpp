@@ -10,7 +10,7 @@ class Feather : public AWeapon
 	public:
 		Feather( void );
 		Feather( Feather const & );
-		~Feather( void );
+		virtual ~Feather( void );
 
 		Feather & operator=(Feather const &);
 

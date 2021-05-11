@@ -42,37 +42,36 @@ int main()
 	bill->equip(ls);
 	std::cout << *bill;
 	bill->attack(ww);
+	bill->recoverAP();
+	bill->equip(pr);
+	bill->recoverAP();
+	bill->recoverAP();
+	bill->recoverAP();
+	bill->recoverAP();
+	
+	bill->recoverAP();
+	
+	bill->recoverAP();
+	
+	bill->recoverAP();
+	bill->recoverAP();
+	bill->recoverAP();
+	bill->recoverAP();
+		std::cout << *bill;
+
 	bill->attack(rs);
+
 	bill->attack(sm);
 
 	std::cout << *bill;
 	
 	delete bill;
 	bill = NULL;
-	//delete pr;
-	//pr = NULL;
-	//delete pf;
-	//pf = NULL;
-	
-//	if (bill)
-//		delete bill;
-	
-	/*
-Character* me = new Character("me");
-std::cout << *me;
-Enemy* b = new RadScorpion();
-AWeapon* pr = new PlasmaRifle();
-AWeapon* pf = new PowerFist();
-me->equip(pr);
-std::cout << *me;
-me->equip(pf);
-me->attack(b);
-std::cout << *me;
-me->equip(pr);
-std::cout << *me;
-me->attack(b);
-std::cout << *me;
-me->attack(b);
-std::cout << *me;*/
-return 0;
+	delete pr;
+	delete pf;
+	delete fe;
+	delete ls;
+	//sill gotta delete the monsters left alive
+	delete ww;
+	return 0;
 }

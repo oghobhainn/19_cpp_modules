@@ -10,7 +10,7 @@ class Werewolf : public Enemy
 	public:
 		Werewolf( void );
 		Werewolf( Werewolf const & );
-		~Werewolf( void );
+		virtual ~Werewolf( void );
 
 		Werewolf & operator=(Werewolf const &);
 

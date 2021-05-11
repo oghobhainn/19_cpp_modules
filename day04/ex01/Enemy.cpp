@@ -3,8 +3,8 @@
 //=========== CONSTRUCTORS / DESTRUCTORS ==============//
 
 Enemy::Enemy( int hp, std::string const &type ) :
-        m_hp(hp),
-        m_type(type)
+        m_type(type),
+		m_hp(hp)
 {
         std::cout << "New Enemy: <" << m_type << "> <" << m_hp << " hp>" << std::endl;
 }
