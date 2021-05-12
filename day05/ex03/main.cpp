@@ -3,6 +3,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -21,9 +22,10 @@ int main()
 	std::cout << std::endl << "======= ROBOTOMY REQUEST FORM =========" << std::endl;
 	RobotomyRequestForm rrf("maison");
 	rrf.execute(bob);
+	rrf.execute(joe);
 	rrf.beSigned(joe);
 	rrf.execute(joe);
-	rrf.execute(joe);
+
 
 	std::cout << std::endl << "======= SHRUBBERY CREATION FORM =========" << std::endl;
 	ShrubberyCreationForm srf("mygarden");
@@ -39,5 +41,45 @@ int main()
 	ppf.beSigned(joe);
 	ppf.execute(joe);
 
+	std::cout << std::endl << "======= INTERNS =========" << std::endl;
+	Intern corenting;
+	Intern fabieng;
+
+	AForm *corRobReq = corenting.makeForm("robotomy request", "district 13");
+	if (corRobReq)
+	{
+		corRobReq->execute(bob);
+		corRobReq->beSigned(joe);
+		corRobReq->execute(newbie);
+		corRobReq->execute(joe);
+	}
+	std::cout << std::endl;
+
+	AForm *corShrubCreat = fabieng.makeForm("shrubbery creation", "babylon_babylon");
+	if (corShrubCreat)
+	{
+		corShrubCreat->execute(bob);
+		corShrubCreat->beSigned(joe);
+		corShrubCreat->execute(newbie);
+		corShrubCreat->execute(joe);
+	}
+	std::cout << std::endl;
+
+	AForm *fabPrePar = fabieng.makeForm("presidential pardon", "Louis");
+	if (fabPrePar)
+	{
+		fabPrePar->execute(bob);
+		fabPrePar->beSigned(joe);
+		fabPrePar->execute(newbie);
+		fabPrePar->execute(joe);
+	}
+	std::cout << std::endl;
+
+	AForm *wrong = fabieng.makeForm("permit to chill in s19", "becentral");
+	if (wrong)
+	{
+		wrong->execute(bob);
+	}
+	
 	return 0;
 }

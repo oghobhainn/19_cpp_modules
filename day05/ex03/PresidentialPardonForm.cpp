@@ -24,6 +24,7 @@ void		PresidentialPardonForm::execute(Bureaucrat const & b)
 		{
 			throw PresidentialPardonForm::GradeTooLowException();
 		}
+		
 		else
 		{
 			std::cout << this->getTarget() << " has been gracied by Zafod Beeblebox" << std::endl;

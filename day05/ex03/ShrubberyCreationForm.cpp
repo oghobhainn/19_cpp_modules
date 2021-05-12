@@ -15,8 +15,7 @@ std::string	ShrubberyCreationForm::getTarget() const { return m_target; }
 void		ShrubberyCreationForm::execute(Bureaucrat const & b)
 {
 	try
-	{
-		if (this->getSigned() == 0)
+	{	if (this->getSigned() == 0)
 		{
 			throw ShrubberyCreationForm::FormNotSignedException();
 		}

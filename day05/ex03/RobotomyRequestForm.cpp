@@ -15,7 +15,7 @@ std::string	RobotomyRequestForm::getTarget() const { return m_target; }
 void		RobotomyRequestForm::execute(Bureaucrat const & b)
 {
 	try
-	{
+	{	
 		if (this->getSigned() == 0)
 		{
 			throw RobotomyRequestForm::FormNotSignedException();
@@ -24,6 +24,7 @@ void		RobotomyRequestForm::execute(Bureaucrat const & b)
 		{
 			throw RobotomyRequestForm::GradeTooLowException();
 		}
+		
 		else
 		{
 			std::cout << "BRRRR BRRRR BRRR " << this->getTarget() << " will get robotomized in 50\" !" << std::endl;
