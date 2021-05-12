@@ -1,32 +1,44 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
 	Bureaucrat joe("joe");
 	Bureaucrat bob("bob");
-	std::cout << bob << std::endl;
-	bob.increment();
-	std::cout << bob << std::endl;
-	bob.decrement();
-	std::cout << bob << std::endl;
-	bob.decrement();
+	Bureaucrat newbie("newbie");
+
 	for (int i = 0; i < 25; i++)
 		bob.increment();
-	for (int i = 0; i < 152; i++)
+	for (int i = 0; i < 149; i++)
 		joe.increment();
-	std::cout << bob << std::endl;
-	std::cout << joe << std::endl;
-	Form f1("order66", 120, 40);
-	std::cout << f1;
-	f1.beSigned(bob);
-	f1.beSigned(joe);
+	
+	std::cout << std::endl << "======= BUREAUCRATS =========" << std::endl;
+	std::cout << joe << bob << newbie;
 
-
+	std::cout << std::endl << "======= ROBOTOMY REQUEST FORM =========" << std::endl;
 	RobotomyRequestForm rrf("maison");
 	rrf.execute(bob);
 	rrf.execute(joe);
+	rrf.beSigned(joe);
+	rrf.execute(joe);
+
+
+	std::cout << std::endl << "======= SHRUBBERY CREATION FORM =========" << std::endl;
+	ShrubberyCreationForm srf("mygarden");
+	srf.execute(newbie);
+	srf.execute(joe);
+	srf.beSigned(joe);
+	srf.execute(joe);
+
+	std::cout << std::endl << "======= PRESIDENTIAL PARDON FORM =========" << std::endl;
+	PresidentialPardonForm ppf("jack the rapper");
+	ppf.execute(bob);
+	ppf.execute(joe);
+	ppf.beSigned(joe);
+	ppf.execute(joe);
 
 	return 0;
 }

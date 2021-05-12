@@ -1,9 +1,9 @@
 #ifndef ROBOTOMY_REQUEST_FORM_HPP
 #define ROBOTOMY_REQUEST_FORM_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class RobotomyRequestForm : public Form
+class RobotomyRequestForm : public AForm
 {
 	public:
 		RobotomyRequestForm();
@@ -22,6 +22,15 @@ class RobotomyRequestForm : public Form
 				{
 					return ( " can't execute ");
 				}
+		};
+
+		class FormNotSignedException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ( " Form isn't signed");
+				}	
 		};
 
 	protected:
