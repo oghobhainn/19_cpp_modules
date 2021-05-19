@@ -10,16 +10,18 @@
 class Span
 {
 	public:
-		Span(int n);
+		Span(unsigned int n);
 		virtual ~Span();
 		Span( Span const & other );
 
-		unsigned int	getSize( void ) const;
-		void			incrementSize( void );
+		std::vector<int>	getVct( void ) const;
+		unsigned int		getSize( void ) const;
+		void				incrementSize( void );
 
 		//Span & operator=( Span const & rhs );
 
 		void	addNumber( int n );
+		void	addNumber( std::vector<int>::iterator start, std::vector<int>::iterator end, int n );
 		int		shortestSpan( void );
 		int		longestSpan( void );
 

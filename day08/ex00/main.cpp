@@ -7,7 +7,7 @@ int main( void )
 {
 	std::list<int>			lst;
 	std::vector<int>		vct;
-	std::deque<int>			deq(5);
+	std::deque<int>			deq;
 
 	lst.push_back(17);
 	lst.push_back(42);
@@ -34,16 +34,43 @@ int main( void )
 	int b = easyfind(vct, 13);
 	int c = easyfind(deq, 89);
 
-	int d = easyfind(lst,100);
-	int f = easyfind(vct,100);
-	int g = easyfind(deq,100);
+	int d;
+	int f;
+	int g;
 
+	
+	
 	std::cout << "a : " << a << std::endl;
 	std::cout << "b : " << b << std::endl;
 	std::cout << "c : " << c << std::endl;
-	std::cout << "d : " << d << std::endl;
-	std::cout << "f : " << f << std::endl;
-	std::cout << "g : " << g << std::endl;
+
+	try
+	{
+		if ((d = easyfind(lst,100)) == -1)
+			throw std::exception();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "d : hors limites" << std::endl;
+	}
+	try
+	{
+		if ((f = easyfind(lst,100)) == -1)
+			throw std::exception();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "f : hors limites" << std::endl;
+	}
+	try
+	{
+		if ((g = easyfind(lst,100)) == -1)
+			throw std::exception();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "g : hors limites" << std::endl;
+	}
 
 	return (0);
 }

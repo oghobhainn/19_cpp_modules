@@ -1,7 +1,6 @@
 #include "Span.hpp"
 
-
-Span::Span(int maxSize) :
+Span::Span(unsigned int maxSize) :
 	m_size(0),
 	m_maxSize(maxSize)
 {}
@@ -10,10 +9,9 @@ Span::Span() {}
 
 Span::~Span() {}
 
-unsigned int		Span::getSize( void ) const 
-{
-	return this->m_size;
-}
+unsigned int		Span::getSize( void ) const { return this->m_size; }
+
+std::vector<int>	Span::getVct( void ) const { return this->m_vct; }
 
 void				Span::incrementSize( void )
 {
@@ -38,6 +36,30 @@ void	Span::addNumber( int n )
 		}
 		else
 			throw std::exception();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Can't add any more numbers" << std::endl;
+	}
+}
+
+void	Span::addNumber( std::vector<int>::iterator start, std::vector<int>::iterator end, int n)
+{
+	try
+	{
+		while ( start != end || this->getSize() < this->m_maxSize)
+		{
+			std::cout << "salut !" << std::endl;
+			if ( this->getSize() < this->m_maxSize )
+			{
+				this->m_vct.push_back(n);
+				this->incrementSize();
+			}
+			else
+			{
+				throw std::exception();
+			}
+		}
 	}
 	catch(const std::exception& e)
 	{
