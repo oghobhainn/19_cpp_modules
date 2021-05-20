@@ -46,8 +46,7 @@ int main( void )
 
 	try
 	{
-		if ((d = easyfind(lst,100)) == -1)
-			throw std::exception();
+		d = easyfind(lst,100);
 	}
 	catch(const std::exception& e)
 	{
@@ -55,8 +54,7 @@ int main( void )
 	}
 	try
 	{
-		if ((f = easyfind(lst,100)) == -1)
-			throw std::exception();
+		f = easyfind(lst,100);
 	}
 	catch(const std::exception& e)
 	{
@@ -64,8 +62,7 @@ int main( void )
 	}
 	try
 	{
-		if ((g = easyfind(lst,100)) == -1)
-			throw std::exception();
+		g = easyfind(lst,100);
 	}
 	catch(const std::exception& e)
 	{

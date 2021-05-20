@@ -12,31 +12,14 @@
 
 
 template< class ContainerModel >
-int	 easyfind(ContainerModel & lhs, int rhs)
+int	& easyfind(ContainerModel & lhs, int rhs)
 {
-	typename ContainerModel::iterator it;
+	typename ContainerModel::iterator it = lhs.begin();
 	typename ContainerModel::iterator ite = lhs.end();
-	//int ans = -1;
-	int ix = 0;
-	try
-	{
-		for (it = lhs.begin(); it != ite; it++)
-		{
-			if (*it == rhs)
-			{
-				return ix;
-				//ans = *it;
-				//return ans;
-			}
-			ix++;
-		}
+	typename ContainerModel::iterator x = std::find(it, ite, rhs);
+	if (x == ite)
 		throw (std::exception());
-	}
-	catch(const std::exception& e)
-	{
-		//std::cerr << e.what() << std::endl;
-	}
-	return -1;
+	return *x;
 }
 
 #endif

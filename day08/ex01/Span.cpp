@@ -67,7 +67,7 @@ void	Span::addNumber( std::vector<int>::iterator start, std::vector<int>::iterat
 	}
 }
 
-int		Span::longestSpan()
+int		Span::longestSpan() const
 {
 	std::vector<int>::iterator it = this->m_vct.begin();
 	std::vector<int>::iterator ite = this->m_vct.end();
@@ -115,7 +115,7 @@ static int findShortest( std::vector<int> vct)
 	return shortest;
 }
 
-int		Span::shortestSpan( void )
+int		Span::shortestSpan( void ) const
 {
 
 	try
