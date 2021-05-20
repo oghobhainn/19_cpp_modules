@@ -5,25 +5,48 @@ Span::Span(unsigned int maxSize) :
 	m_maxSize(maxSize)
 {}
 
-Span::Span() {}
-
 Span::~Span() {}
 
-unsigned int		Span::getSize( void ) const { return this->m_size; }
+unsigned int	Span::getSize( void ) const { return this->m_size; }
 
 std::vector<int>	Span::getVct( void ) const { return this->m_vct; }
 
-void				Span::incrementSize( void )
+void	Span::incrementSize( void ) { this->m_size += 1; }
+
+Span & Span::operator=(Span const & other)
 {
-	this->m_size += 1;
+	m_size = other.m_size;
+	m_maxSize = other.m_maxSize;
+	for (unsigned int i = 0; i < other.m_size; i++)
+		m_vct.push_back(other.m_vct[i]);
+	return *this;
 }
 
-/*
-Span & Span::operator=(Span const & rhs)
+void	Span::addNumber( int start, int end)
 {
-
+	if (end - start >= 0)
+	{
+		while (start <= end)
+		{
+			if (this->getSize() < this->m_maxSize)
+			{
+				this->m_vct.push_back(start);
+				this->incrementSize();
+				start++;
+			}
+			else
+			{
+				throw std::exception();
+			}
+			
+		}
+	}
+	else
+	{
+		throw std::exception();
+	}
+	
 }
-*/
 
 void	Span::addNumber( int n )
 {
@@ -43,56 +66,16 @@ void	Span::addNumber( int n )
 	}
 }
 
-void	Span::addNumber( std::vector<int>::iterator start, std::vector<int>::iterator end, int n)
-{
-	try
-	{
-		while ( start != end || this->getSize() < this->m_maxSize)
-		{
-			std::cout << "salut !" << std::endl;
-			if ( this->getSize() < this->m_maxSize )
-			{
-				this->m_vct.push_back(n);
-				this->incrementSize();
-			}
-			else
-			{
-				throw std::exception();
-			}
-		}
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Can't add any more numbers" << std::endl;
-	}
-}
-
 int		Span::longestSpan() const
 {
-	std::vector<int>::iterator it = this->m_vct.begin();
-	std::vector<int>::iterator ite = this->m_vct.end();
-
-	//std::cout << "size : " << this->getSize() << std::endl;
-
-	try
+	if (this->getSize() > 1)
 	{
-		if (this->getSize() > 1)
-		{
-
-			int shortest = *std::max_element(it, ite) - *std::min_element(it, ite);
-			return shortest;
-		}
-		else
-		{
-			throw std::exception();
-		}
-		
+		int shortest = *std::max_element(m_vct.begin(), m_vct.end()) - *std::min_element(m_vct.begin(), m_vct.end());
+		return shortest;
 	}
-	catch(const std::exception& e)
+	else
 	{
-		//std::cerr << e.what() << '\n';
-		std::cerr << "not enough numbers to check longest span" << std::endl;
-		return -1;
+		throw std::exception();
 	}
 }
 
@@ -117,28 +100,14 @@ static int findShortest( std::vector<int> vct)
 
 int		Span::shortestSpan( void ) const
 {
-
-	try
+	if (this->getSize() > 1)
 	{
-		if (this->getSize() > 1)
-		{
-			std::vector<int>	copy = this->m_vct;
-	
-			sort(copy.begin(), copy.end());
-
-			return findShortest(copy);
-		}
-		else
-		{
-			throw std::exception();
-		}
-		
+		std::vector<int>	copy = this->m_vct;
+		sort(copy.begin(), copy.end());
+		return findShortest(copy);
 	}
-	catch(const std::exception& e)
+	else
 	{
-		//std::cerr << e.what() << '\n';
-		std::cerr << "not enough numbers to check shortest span" << std::endl;
+		throw std::exception();
 	}
-	return -1;
-
 }

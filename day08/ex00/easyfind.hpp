@@ -10,13 +10,12 @@
 #include <array>
 #include <deque>
 
-
-template< class ContainerModel >
-int	& easyfind(ContainerModel & lhs, int rhs)
+template< typename T >
+int	& easyfind(T & lhs, int rhs)
 {
-	typename ContainerModel::iterator it = lhs.begin();
-	typename ContainerModel::iterator ite = lhs.end();
-	typename ContainerModel::iterator x = std::find(it, ite, rhs);
+	typename T::iterator it = lhs.begin();
+	typename T::iterator ite = lhs.end();
+	typename T::iterator x = std::find(it, ite, rhs);
 	if (x == ite)
 		throw (std::exception());
 	return *x;
